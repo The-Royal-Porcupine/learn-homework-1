@@ -14,6 +14,8 @@
 """
 import logging
 import ephem
+import setting
+
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -23,10 +25,10 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
                     )
 
 PROXY = {
-    'proxy_url': 'socks5://t1.learn.python.ru:1080',
+    'proxy_url': setting.PROXY_URL,
     'urllib3_proxy_kwargs': {
-        'username': 'learn',
-        'password': 'python'
+        'username': setting.PROXY_USERNAME,
+        'password': setting.PROXY_PASSWORD
     }
 }
 
@@ -60,7 +62,7 @@ def constellation(bot, update):
 
 def main():
 
-    mybot = Updater("1157879464:AAGqfDDSw5GL3kSq7A8OG1MaDYPq57HPnC0", request_kwargs=PROXY)
+    mybot = Updater(setting.API_KEY, request_kwargs=PROXY)
 
     commands = [
         ["start", greet_user],
