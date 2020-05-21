@@ -1,5 +1,4 @@
 """
-
 Домашнее задание №1
 
 Цикл for: Оценки
@@ -10,12 +9,26 @@
 * Посчитать и вывести средний балл по каждому классу.
 """
 
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
+
+    marks_by_classes = [
+        {'school_class': '4a', 'scores': [3, 4, 4, 5, 2]},
+        {'school_class': '5b', 'scores': [5, 4, 3, 3, 2]},
+        {'school_class': '6a', 'scores': [3, 5, 5, 4, 2]},
+        {'school_class': '7b', 'scores': [5, 5, 5, 2, 2]}
+    ]
+
+    pupils_number_total = 0
+    scores_sum_total = 0
+    for each_class in marks_by_classes:
+        print(f"Средний балл в {each_class['school_class']}: {sum(each_class['scores']) / len(each_class['scores'])}")
+    pupils_number_total += len(each_class['scores'])
+    scores_sum_total += sum(each_class['scores'])
+    print(f"Средний балл по школе: {scores_sum_total / pupils_number_total}")
+
+
 if __name__ == "__main__":
     main()
+
+

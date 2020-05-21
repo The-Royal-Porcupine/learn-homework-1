@@ -15,11 +15,15 @@
     
 """
 
+
 def ask_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
+
+    phrases = {'как дела?': 'Отлично!', 'что делаешь?': 'Программирую', 'партия?': 'Жуликов и воров', 'спорт?': 'Ты мир'}
+    answer = input("Как дела? ")
+    while answer.lower() != 'хорошо':
+        print(phrases.get(answer.lower(), ''))
+        answer = input("Как дела? ")
+
+
 if __name__ == "__main__":
     ask_user()
