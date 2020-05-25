@@ -23,8 +23,11 @@ def main():
     scores_sum_total = 0
     for each_class in marks_by_classes:
         print(f"Средний балл в {each_class['school_class']}: {sum(each_class['scores']) / len(each_class['scores'])}")
-    pupils_number_total += len(each_class['scores'])
-    scores_sum_total += sum(each_class['scores'])
+    
+    # так за средний бал считается только последний класс, потому что два этих действия - не в цикле
+    # чтобы данные действия производились в цикле и результат был верным, нужно добавить отступы
+        pupils_number_total += len(each_class['scores'])
+        scores_sum_total += sum(each_class['scores'])
     print(f"Средний балл по школе: {scores_sum_total / pupils_number_total}")
 
 

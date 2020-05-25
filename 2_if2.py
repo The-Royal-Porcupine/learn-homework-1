@@ -21,7 +21,8 @@ def main(string_one, string_two):
     if type(string_one) == str and type(string_two) == str:
         if len(string_one) == len(string_two):
             return 1
-        elif len(string_one) != len(string_two) and string_two == 'learn':
+        #далее все что попадет в else будет удовл-ть len(string_one) != len(string_two) - можно условие не писать
+        elif  string_two == 'learn':
             return 3
         elif len(string_one) > len(string_two):
             return 2
